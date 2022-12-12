@@ -4,7 +4,6 @@ from datetime import datetime,timedelta
 
 t0 = datetime.fromisoformat('2022-02-11')
 t1 = datetime.now()
-(t1-t0).days
 
 css_tle = requests.session()
 css_url = 'http://www.cmse.gov.cn/was5/web/search'
