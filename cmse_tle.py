@@ -30,8 +30,15 @@ for i in range((t1-t0).days):
     else:
         if '48274U' in r_tle:
             tle_html = etree.HTML(r_tle)
-            for tle_html in tle_html.xpath("//font"): 
-                tle_data.append(tle_html.text.replace('\xa0',' '))
+            for i in tle_html.xpath("//font"): 
+                tle_txt = i.text.replace('\xa0',' ')
+                if tle_txt.endswith(' '):
+                    try:
+                        tle_txt+=tle_html.xpath("//span")[0].text
+                    except:
+                        pass
+                tle_data.append(tle_txt)
+
         else:
             print(params['docreltime'], r_tle)
 
