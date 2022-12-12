@@ -38,7 +38,6 @@ for i in range((t1-t0).days):
                     except:
                         pass
                 tle_data.append(tle_txt)
-
         else:
             print(params['docreltime'], r_tle)
 
